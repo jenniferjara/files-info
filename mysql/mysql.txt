@@ -1,0 +1,104 @@
+---------------------
+** use basic mysql **
+---------------------
+# login 
+	mysql -u root -p
+
+# ver bases de datos
+	show databases;
+
+# usar una base de datos
+	use wp_users_DB;
+
+# ver tablas
+	show tables;
+
+# ver, crear tablas, etc
+	sintaxis sql
+
+---------------------
+	
+* create database <nombre>
+* use <nombre>
+* exit
+* php 
+
+--\ end
+
+---------------------
+** Import file.sql **
+---------------------
+
+* inject script
+
+Terminal:
+	mysql -u <username> -p <databasename> < <filename.sql>
+
+Example:
+	mysql -u root -p wp_users_DB < dump.sql
+
+
+--\ end
+
+* Login to your MYSQL console.
+	mysql -u root -p
+
+	use <name_of_your_database>;
+	source <path_of_your_.sql_file>
+
+Example:
+
+	use wp_users_DB;
+	source /var/www/project_a/dump.sql;
+
+
+--\ end
+
+------------------
+** BackUp mysql **
+------------------
+
+mysqldump -u <username> -p <database_to_backup> > backup_name.sql
+mysqldump -u root -p scotiabankDB > backup_name.sql
+
+//  Restoring
+1.- necesito crea una base de datos limpia
+	mysql -u username -p
+	CREATE DATABASE database_name;
+	exit
+
+2.- Importar el script
+	mysql -u <username> -p <database_name> < backup_name.sql 
+
+-----------------------
+*crear DB
+	create database name_DB;
+
+*crear tabla
+	CREATE TABLE name_table (name VARCHAR(20), owner VARCHAR(20),
+	species VARCHAR(20), sex CHAR(1), birth DATE, death DATE);
+
+*borra DB
+	drop database name_DB;
+
+*describe el contenido de la tabla
+	describe table_name;
+
+*insertar datos en una tabla
+	 insert into pet
+	 values ('Puffball','Diane','hamster','f','1999-03-30',NULL);
+
+*filtra todos los datos de una columna
+	select Destino from claves_options;
+
+*filtra segun dato específico de una columna
+	select * from claves_options where Destino = 'Petra';
+	(si contiene espacio)
+	select * from claves_options where `Pregunta 3` = 'Playa';
+
+*cuenta segun el dato una columna de la tabla
+	select `column_name`, count(*) from claves_options group by column_name;
+
+*Muestra informacion sobre el estado del motor de datos
+	SHOW ENGINE INNODB STATUS
+

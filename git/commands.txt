@@ -1,0 +1,25 @@
+Borrar cambios no comitiados sin especificar hasta que commit
+- git reset --hard (cuidado con este coamando)
+
+Borra cambios hasta un commit especifico 
+- git reset --hard <SOME-COMMIT>
+
+Abrir la carpeta de un proyecto
+- start .
+
+Borra un archivo/carpeta
+- rm -rf nombre_del_file - ./carpeta
+
+Cambiar mensaje del último commit
+* recomendado para trabajo individual en una rama.
+ - git commit --amend
+   se abre un editor donde se cambia el commit, guarda con 'ctrl+c :wq enter'
+ - git log (verificar que el commit cambio en el local)
+ - git push origin nombre-de-rama --force
+
+Cambiar remote en local
+ - git remote -v
+ - git remote rm origin
+ - git remote add origin link_repo
+ - git remote -v
+

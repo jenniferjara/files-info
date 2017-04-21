@@ -1,0 +1,23 @@
+despues de clonar el repo:
+
+* cp .env.example .env
+* composer install
+* php artisan key:generate
+  (por primera vez)
+
+- instalar las dependencias en ambos entornos
+  - npm (windows)
+  - composer (vagrant)
+
+si hay db realizar la migracion 
+
+* entrar a mysql: mysql -u root -p
+* create database nombre
+* use nombre
+* exit 
+* modificar .env
+* php artisan migrate
+
+Actualizacion de DB
+
+* 

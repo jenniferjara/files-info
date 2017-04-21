@@ -1,0 +1,188 @@
+
+
+## Installation
+
+// Update Sytem OS
+
+    sudo apt-get update
+    sudo apt-get upgrade
+
+// PHP
+    // Instalar php 5.6 Correctamente
+
+    // Purgar versiones anteriores
+    sudo apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+
+    // Add the PPA
+    sudo add-apt-repository ppa:ondrej/php
+
+    sudo apt-get install software-properties-common
+
+    // Install PHP Version
+    sudo apt-get update
+    sudo apt-get install php5.6
+
+    sudo apt-get install php5.6-mbstring php5.6-mcrypt php5.6-mysql php5.6-xml
+
+    sudo php -v
+
+    // verificar en el index.php
+
+    <?php phpinfo(); ?>
+    // Deben coincidir las dos versiones
+
+
+// Apache
+    sudo apt-get install apache2 libapache2-mod-php5
+
+// Install extensions
+    #installing json extension
+        sudo apt-get install php5-json
+
+    #installing unzip extension
+        sudo apt-get install unzip
+
+    #installing curl extension
+        sudo apt-get install curl
+
+    #installing openssl extension
+        sudo apt-get install openssl
+
+    #installing mcrypt extension
+        sudo apt-get install php5-mcrypt
+
+    #enable mcrypt extension
+        sudo php5enmod mcrypt
+
+    #installing git
+        sudo apt-get install -y git-core
+
+    #enable mod rewrite extension
+        sudo a2enmod rewrite
+
+    #restarting apache
+        sudo service apache2 restart
+
+
+// Install  Composer Globalmente
+    # installing composer
+        curl -sS https://getcomposer.org/installer | php
+
+    # move composer globally
+        sudo mv composer.phar /usr/local/bin/composer
+
+    # check composer working
+        composer
+
+
+More info:
+https://www.howtoforge.com/tutorial/install-laravel-on-ubuntu-for-apache/
+
+
+## Start proyect
+
+    // Iniciar projecto Laravel
+        cd /var/www/html
+
+        // Crear carpeta con el proyecto
+        
+        // v5.3.*
+        > composer create-project --prefer-dist laravel/laravel web_proto "5.3.*"
+        
+        or
+
+        // v5.2.*
+        > composer create-project --prefer-dist laravel/laravel web_proto "5.2.*"
+
+    // Composer Dependencies
+        > composer install
+
+    // Confirmar que .env se genere el key
+        * sino se genero ejecutar
+        > php artisan key:generate
+
+    // Configurar .env
+        * Con la Conexion a la DB
+
+        > php artisan config:cache
+        > php artisan config:clear
+
+
+## Configurar Apache
+    El proyecto lamp require configuración
+
+    // Entrar
+    > cd /etc/apache2/sites-available/
+
+    // Crear un .conf
+    > sudo vim myproyect.empresa.lv.conf
+
+    // Dentro pegar la configuracion 
+        > Pegar
+
+        <VirtualHost *:80>
+                # The ServerName directive sets the request scheme, hostname and port that
+                # the server uses to identify itself. This is used when creating
+                # redirection URLs. In the context of virtual hosts, the ServerName
+                # specifies what hostname must appear in the request's Host: header to
+                # match this virtual host. For the default virtual host (this file) this
+                # value is not decisive as it is used as a last resort host regardless.
+                # However, you must set it for any further virtual host explicitly.
+                #ServerName www.example.com
+
+                ServerAdmin webmaster@scotiabank
+                ServerName prestamos.scotiabank.mambo.lv
+
+                DocumentRoot /var/www/mambo/scotiabank/prestamos/public
+                <Directory /var/www/mambo/scotiabank/prestamos/public>
+                    Options Indexes FollowSymLinks
+                    AllowOverride All
+                    Require all granted
+                </Directory>
+
+                # Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
+                # error, crit, alert, emerg.
+                # It is also possible to configure the loglevel for particular
+                # modules, e.g.
+                #LogLevel info ssl:warn
+
+                ErrorLog /var/log/mambo-scotiabank-prestamos-error.log
+                CustomLog /var/log/mambo-scotiabank-prestamos-access.log combined
+
+                # For most configuration files from conf-available/, which are
+                # enabled or disabled at a global level, it is possible to
+                # include a line for only one particular virtual host. For example the
+                # following line enables the CGI configuration for this host only
+                # after it has been globally disabled with "a2disconf".
+                #Include conf-available/serve-cgi-bin.conf
+        </VirtualHost>
+
+        > Editar con el contenido correcto
+            - ServerAdmin
+            - ServerName
+            - DocumentRoot
+            - Directory
+            - ErrorLog
+            - CustomLog
+
+        > Guardar con 
+            - ctrl + c
+            - :wq
+
+    // Habilitar en apache => En el mismo directorio /etc/apache2/sites-available/
+        - sudo a2enmod authz_host
+        - sudo a2ensite myproyect.empresa.lv.conf
+        - sudo service apache2 reload
+
+
+    // Editar /etc/hosts
+        > vim /etc/hosts
+        * añadir en la ultima linea la conexion
+        127.0.0.1  myproyect.empresa.lv
+
+## Listo entrar en myproyect.empresa.lv:8080
+    * Esto es por mi configuracion de vagrant
+    * En production basta con la url .com
+
+
+    

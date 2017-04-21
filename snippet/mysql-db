@@ -1,0 +1,5 @@
+
+
+mysql -u root -p tottus_DB < ./database/dump/tottusDB_2017-02-08.sql
+
+

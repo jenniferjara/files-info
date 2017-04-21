@@ -1,0 +1,36 @@
+php artisan
+
+// Ver version de laravel
+php artisan -v
+
+// assets
+
+	assets:clean               Cleans out all your cached assets
+	assets:generate            Generate static assets in your public folder
+	assets:setup               Setup the default asset pipeline folders in your new Laravel project
+
+// db
+	db:seed                    Seed the database with records
+
+// key
+	key:generate               Set the application key
+
+// migrate
+	migrate:install            Create the migration repository
+	migrate:make               Create a new migration file
+	migrate:publish            Publish a package's migrations to the application
+	migrate:refresh            Reset and re-run all migrations
+	migrate:reset              Rollback all database migrations
+	migrate:rollback           Rollback the last database migration
+
+
+php artisan assets:clean
+php artisan tinker
+
+
+//helpers
+updatedb
+locate mcrypt.so
+sudo a2enmod mcrypt
+sudo php5enmod mcrypt
+

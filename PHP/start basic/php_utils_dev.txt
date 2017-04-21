@@ -1,0 +1,141 @@
+// Crear a new folder
+> mkdir folder_lamp
+> cd folder_lamp
+
+// Install  Vagrant
+// Esto instala una version de ubuntu ligera 
+> vagrant init hashicorp/precise64
+
+
+// Reiniciar la maquina virtual
+> vagrant halt
+> vagran up
+
+
+// Entrar en el server
+> vagrant ssh
+
+-------
+
+// Cuando inicie el ordenador, requiero reiniciar
+
+> vagrant halt
+> vagrant up
+> vagrant ssh
+
+-------
+
+// Puedo Elimina la maquina virtual
+> vagrant destroy
+
+-------
+
+
+// Levantar o iniciar un proyecto LAMP
+
+1.- Start vagrant with LAMP
+
+// en la carpeta -> cd /vagrant/lamp
+
+> vagrant halt
+> vagrant up
+> vagrant ssh
+
+
+2.- Clone repo from git
+
+// from /var/www   -> create a new project inside
+
+
+3.- Virtual Host with url friendly
+
+cd /etc/apache2/sites-available 
+cd ll
+
+// crear nuevo archivo
+
+sudo touch club-intercorp.interbank.mambo.lv.conf
+
+// pegar dentro configuracion basica de un virtual host
+// configurar los valores con datos locales
+
+
+
+// Set a new url site con ubuntu, apache
+
+sudo a2ensite nombre_de_uri_amigable
+// sudo a2ensite club-intercorp.interbank.mambo.ci.conf
+
+// Reiniciar apache2
+sudo service apache2 reload
+
+
+// activar como rewrite de apache2 si lo require
+> ll
+
+
+
+
+4.- En localhome de mi maquina local
+
+vim /etc/hosts
+// añadir mi nueva uri amigable
+
+127.0.0.1   club-intercorp.interbank.mambo.ci.conf
+
+a2enmod authz_host
+
+
+Proyects =>
+
+> Club intercorp
+https://joelgt@bitbucket.org/compec/club_intercorp.git
+
+> Urbi
+https://joelgt@bitbucket.org/compec/urbi.git
+
+
+
+
+
+
+// Install Composer
+
+curl -s http://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/
+
+alias composer='/usr/local/bin/composer.phar'
+
+sudo chmod +x /usr/local/bin/composer.phar
+
+composer
+
+
+
+// Start connect with mysql
+// user sequel pro en maquina local para conectar
+
+
+// vagrant config
+vi /etc/mysql/my.cnf
+
+// My sql user connect sequel pro
+
+
+// Darle privilegios a mysql en vagrant para que se conecte desde mi entorno local
+mysql -u root -p
+use mysql
+select * from user;
+select * from user where User="root";
+select * from user where User="root" and host='%';
+update user set password=PASSWORD('mysql') where user="root";
+
+flush privileges;
+
+// Conexión configuracion mysql
+
+host: 127.0.0.1
+user: root
+pass: mysql
+puerto: 33060
+

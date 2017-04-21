@@ -1,0 +1,18 @@
+lumen => apis
+laravel => web , apis
+
+
+composer 
+bower
+gulp
+bootstrap
+
+unit testing
+-> php unit
+-> codeception (*)
+
+
+jenkis => entorno de deployment automatic
+* validacion de codigo
+* coverage
+* 
