@@ -70,8 +70,11 @@ mysqldump -u root -p scotiabankDB > backup_name.sql
 2.- Importar el script
 	mysql -u <username> -p <database_name> < backup_name.sql 
 
------------------------
-*crear DB
+
+-----------
+DataBases
+-----------
+*Crear una base de datos
 	create database name_DB;
 
 *crear tabla
@@ -82,9 +85,14 @@ mysqldump -u root -p scotiabankDB > backup_name.sql
 	drop database name_DB;
 
 *describe el contenido de la tabla
-	describe table_name;
+
+
+-------
+Table
+-------
 
 *insertar datos en una tabla
+	explain table_name;
 	 insert into pet
 	 values ('Puffball','Diane','hamster','f','1999-03-30',NULL);
 
@@ -99,6 +107,13 @@ mysqldump -u root -p scotiabankDB > backup_name.sql
 *cuenta segun el dato una columna de la tabla
 	select `column_name`, count(*) from claves_options group by column_name;
 
-*Muestra informacion sobre el estado del motor de datos
-	SHOW ENGINE INNODB STATUS
 
+----------------
+Storage Engine
+----------------
+*Mostrar que storage engine soportan tu serve
+	SHOW ENGINES (tabla simple)
+	SHOW ENGINES\G (tabla descriptiva)
+	
+*Muestra el estado de INNODB
+	SHOW ENGINE INNODB STATUS
