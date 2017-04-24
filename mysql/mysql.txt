@@ -120,8 +120,15 @@ Table
     DROP table_name; <== borra un campo de la tabla
 
 *insertar datos en una tabla
-	INSERT INTO table_name 
-	VALUES ('value_1' tipo_dato, 'value_2' tipo_dato, 'value_3' tipo_dato);
+	INSERT INTO table_name
+	VALUES (value1, value2, value3, ...);
+
+	INSERT INTO table_name (column1, column2, column3, ...)
+	VALUES (value1, value2, value3, ...);
+
+*contar datos
+	select count(*) from table_name <== cuenta los elem selecionados en una tabla
+	where column_name = dato <== referencia del conteo
 
 ----------------
 Storage Engine
@@ -132,5 +139,10 @@ Storage Engine
 	
 *Muestra el estado de INNODB
 	SHOW ENGINE INNODB STATUS 
+
+----------------
+----------------
+*funcion que retorna la fecha actual
+	NOW();
 
 
