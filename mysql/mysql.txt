@@ -107,6 +107,21 @@ Table
 *cuenta segun el dato una columna de la tabla
 	select `column_name`, count(*) from claves_options group by column_name;
 
+*cambiar el contenido de una table
+	ALTER TABLE users
+    ADD table_name tipo_dato <== agrega un campo en la tabla
+    AFTER table_name_ref; <== referencia de la ubicacion del nuevo campo
+
+    ALTER TABLE users
+    change table_name <== tabla que cambia de nombre
+    new_table_name tipo_dato; <== nuevo nombre y tipo de dato
+
+    ALTER TABLE users
+    DROP table_name; <== borra un campo de la tabla
+
+*insertar datos en una tabla
+	INSERT INTO table_name 
+	VALUES ('value_1' tipo_dato, 'value_2' tipo_dato, 'value_3' tipo_dato);
 
 ----------------
 Storage Engine
@@ -116,4 +131,6 @@ Storage Engine
 	SHOW ENGINES\G (tabla descriptiva)
 	
 *Muestra el estado de INNODB
-	SHOW ENGINE INNODB STATUS
+	SHOW ENGINE INNODB STATUS 
+
+
