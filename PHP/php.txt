@@ -1,0 +1,4 @@
+version ==> php -v
+todos los modulos ==> php -m
+modulos especificos ==> php -m | grep nombre_modulo
+
