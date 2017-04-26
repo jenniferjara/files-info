@@ -130,6 +130,9 @@ Table
 	select count(*) from table_name <== cuenta los elem selecionados en una tabla
 	where column_name = dato <== referencia del conteo
 
+*insertar varios datos en una columna 
+	insert into table_name(column_name) values ('value1'), ('value2'), ('value3');
+
 ----------------
 Storage Engine
 ----------------
