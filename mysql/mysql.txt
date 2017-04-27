@@ -91,11 +91,6 @@ DataBases
 Table
 -------
 
-*insertar datos en una tabla
-	explain table_name;
-	 insert into pet
-	 values ('Puffball','Diane','hamster','f','1999-03-30',NULL);
-
 *filtra todos los datos de una columna
 	select Destino from claves_options;
 
@@ -107,18 +102,21 @@ Table
 *cuenta segun el dato una columna de la tabla
 	select `column_name`, count(*) from claves_options group by column_name;
 
-*cambiar el contenido de una table
+*añade una columna nueva
 	ALTER TABLE table_name
-    	ADD column_name tipo_dato <== agrega un campo en la tabla
-    	AFTER column_name_ref; <== referencia de la ubicacion del nuevo campo
+    	ADD column_name tipo_dato <== nueva columna
+    	AFTER column_name_ref; <== referencia de ubicacion
 
+*cambia el nombre de una columna
     	ALTER TABLE table_name
     	change column_name <== tabla que cambia de nombre
     	new_column_name tipo_dato; <== nuevo nombre y tipo de dato
 
+*borra una columna
     	ALTER TABLE table_name
-    	DROP column_name; <== borra un campo de la tabla
+    	DROP column_name; <== borra de la columna
 
+*modifica propiedades de una columna
 	ALTER TABLE table_name 
 	MODIFY column_name varchar(25) NOT NULL; <== modificar tipo y valor de null
 
