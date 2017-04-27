@@ -108,16 +108,19 @@ Table
 	select `column_name`, count(*) from claves_options group by column_name;
 
 *cambiar el contenido de una table
-	ALTER TABLE users
-    ADD table_name tipo_dato <== agrega un campo en la tabla
-    AFTER table_name_ref; <== referencia de la ubicacion del nuevo campo
+	ALTER TABLE table_name
+    	ADD column_name tipo_dato <== agrega un campo en la tabla
+    	AFTER column_name_ref; <== referencia de la ubicacion del nuevo campo
 
-    ALTER TABLE users
-    change table_name <== tabla que cambia de nombre
-    new_table_name tipo_dato; <== nuevo nombre y tipo de dato
+    	ALTER TABLE table_name
+    	change column_name <== tabla que cambia de nombre
+    	new_column_name tipo_dato; <== nuevo nombre y tipo de dato
 
-    ALTER TABLE users
-    DROP table_name; <== borra un campo de la tabla
+    	ALTER TABLE table_name
+    	DROP column_name; <== borra un campo de la tabla
+
+	ALTER TABLE table_name 
+	MODIFY column_name varchar(25) NOT NULL; <== modificar tipo y valor de null
 
 *insertar datos en una tabla
 	INSERT INTO table_name
@@ -125,13 +128,20 @@ Table
 
 	INSERT INTO table_name (column1, column2, column3, ...)
 	VALUES (value1, value2, value3, ...);
+	
+	(Insertar varios datos en una columna)
+	insert into table_name(column_name) values ('value1'), ('value2'), ('value3');
 
 *contar datos
 	select count(*) from table_name <== cuenta los elem selecionados en una tabla
 	where column_name = dato <== referencia del conteo
 
-*insertar varios datos en una columna 
-	insert into table_name(column_name) values ('value1'), ('value2'), ('value3');
+*modificar / cambiar
+	alter table table_name change old_column_name new_column_name tipo_dato
+	
+*crea una tabla y almacena datos en base a una consulta
+	CREATE TABLE table_name AS SELECT expressions FROM existing_tables WHERE conditions;
+
 
 ----------------
 Storage Engine
@@ -143,9 +153,16 @@ Storage Engine
 *Muestra el estado de INNODB
 	SHOW ENGINE INNODB STATUS 
 
+
 ----------------
+FUNCIONES
 ----------------
-*funcion que retorna la fecha actual
+*retorna la fecha actual
 	NOW();
+
+*retorna fecha del servidor
+	SYSDATE();
+
+
 
 
