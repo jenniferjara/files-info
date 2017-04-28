@@ -133,6 +133,16 @@ Table
 *crea una tabla y almacena datos en base a una consulta
 	CREATE TABLE table_name AS SELECT expressions FROM existing_tables WHERE conditions;
 
+*actulizar un dato con referencia a una celda
+	 UPDATE table_name SET column_set = some_data where column_ref = 'example_data';
+
+*actulizar datos con relaciona datos de otra tabla
+	 UPDATE table_name_act
+	 SET column_set = 
+	 (select column_ref 
+	 from table_ref 
+	 WHERE condition_ref = some_data) 
+	 WHERE condition_table_act = 'some_data';
 
 ---------------
 BUSQUEDAS, FITROS
