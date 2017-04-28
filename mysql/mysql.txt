@@ -91,17 +91,6 @@ DataBases
 Table
 -------
 
-*filtra todos los datos de una columna
-	select Destino from claves_options;
-
-*filtra segun dato específico de una columna
-	select * from claves_options where Destino = 'Petra';
-	(si contiene espacio)
-	select * from claves_options where `Pregunta 3` = 'Playa';
-
-*cuenta segun el dato una columna de la tabla
-	select `column_name`, count(*) from claves_options group by column_name;
-
 *añade una columna nueva
 	ALTER TABLE table_name
     	ADD column_name tipo_dato <== nueva columna
@@ -144,6 +133,25 @@ Table
 *crea una tabla y almacena datos en base a una consulta
 	CREATE TABLE table_name AS SELECT expressions FROM existing_tables WHERE conditions;
 
+
+---------------
+BUSQUEDAS, FITROS
+---------------
+
+*filtra todos los datos de una columna
+        select Destino from claves_options;
+
+*filtra segun dato específico de una columna
+        select * from claves_options where Destino = 'Petra';
+        (si contiene espacio)
+        select * from claves_options where `Pregunta 3` = 'Playa';
+
+*cuenta segun el dato una columna de la tabla
+	select `column_name`, count(*) from claves_options group by column_name;
+
+*muestra una busqueda segun la cantidad de filas 
+	SELECT column_name FROM table_name 
+	LIMIT #; <== cantidad de filas que muestra el filtro
 
 ----------------
 Storage Engine
