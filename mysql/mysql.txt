@@ -169,6 +169,8 @@ BUSQUEDAS, FITROS
 
 *crear table a partir de una consulta de una funcion
 	create table new_table_name AS select column_name, function(param) from table_name order by column_name;
+	(nuevos nombres de las columnas de la tabla nueva con alias)
+	create table new_table_name AS select column_name AS alias_name, function(param) AS alias_name from table_name order by column_name;
 
 
 ----------------
