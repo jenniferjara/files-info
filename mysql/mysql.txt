@@ -149,19 +149,27 @@ BUSQUEDAS, FITROS
 ---------------
 
 *filtra todos los datos de una columna
-        select Destino from claves_options;
+        select column_name or * (selecciona todos los datos) from table_name;
 
 *filtra segun dato específico de una columna
-        select * from claves_options where Destino = 'Petra';
-        (si contiene espacio)
+        select * from table_name where condiciones;
+        (si hay espacios entre las palabras)
         select * from claves_options where `Pregunta 3` = 'Playa';
 
 *cuenta segun el dato una columna de la tabla
-	select `column_name`, count(*) from claves_options group by column_name;
+	select coumn_name, count(*) from table_name group by column_name;
 
 *muestra una busqueda segun la cantidad de filas 
 	SELECT column_name FROM table_name 
 	LIMIT #; <== cantidad de filas que muestra el filtro
+
+*muestra la consulta sin filas duplicadas
+	SELECT DISTINCT column_name from table_name;
+	(se puede añadir condicionales)
+
+*crear table a partir de una consulta de una funcion
+	create table new_table_name AS select column_name, function(param) from table_name order by column_name;
+
 
 ----------------
 Storage Engine
@@ -182,3 +190,7 @@ FUNCIONES
 
 *retorna fecha del servidor
 	SYSDATE();
+
+*muestra todas las funciones
+	show * from mysql.func;
+	show function status;
