@@ -34,9 +34,9 @@ despues de clonar el repo:
 * composer install
 * php artisan key:generate
 
-- instalar las dependencias en ambos entornos
-  - npm (windows)
-  - composer (vagrant)
+* npm (windows)
+
+* php artisan migrate
 
 si hay db realizar la migracion 
 
