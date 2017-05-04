@@ -146,6 +146,12 @@ Table
 	 from table_ref 
 	 WHERE condition_ref = some_data) 
 	 WHERE condition_table_act = 'some_data';
+	 
+*crear table a partir de una consulta de una funcion
+	create table new_table_name AS select column_name, function(param) from table_name order by column_name;
+	(nuevos nombres de las columnas de la tabla nueva con alias)
+	create table new_table_name AS select column_name AS alias_name, function(param) AS alias_name from table_name order by column_name;
+
 
 ---------------
 BUSQUEDAS, FITROS
@@ -170,14 +176,8 @@ BUSQUEDAS, FITROS
 	SELECT DISTINCT column_name from table_name;
 	(se puede añadir condicionales)
 
-*crear table a partir de una consulta de una funcion
-	create table new_table_name AS select column_name, function(param) from table_name order by column_name;
-	(nuevos nombres de las columnas de la tabla nueva con alias)
-	create table new_table_name AS select column_name AS alias_name, function(param) AS alias_name from table_name order by column_name;
-
 *fitro de datos con subquery
 	select customers.customerNumber, contactFirstName, payments.amount from customers, payments where amount = (select max(amount) from payments) and customers.custom erNumber = (select max(customerNumber) from customers);
-
 
 ----------------
 Storage Engine
