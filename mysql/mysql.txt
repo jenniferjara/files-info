@@ -123,6 +123,9 @@ Table
 	ALTER TABLE table_name
 	RENAME TO new_table_name;
 
+*borra una fila de una table
+	delete from table_name where conditions
+
 *contar datos
 	select count(*) from table_name <== cuenta los elem selecionados en una tabla
 	where column_name = dato <== referencia del conteo
@@ -136,7 +139,7 @@ Table
 *actulizar un dato con referencia a una celda
 	 UPDATE table_name SET column_set = some_data where column_ref = 'example_data';
 
-*actulizar datos con relaciona datos de otra tabla
+*actulizar datos de una tabla con referencia de datos a otra tabla
 	 UPDATE table_name_act
 	 SET column_set = 
 	 (select column_ref 
@@ -171,6 +174,9 @@ BUSQUEDAS, FITROS
 	create table new_table_name AS select column_name, function(param) from table_name order by column_name;
 	(nuevos nombres de las columnas de la tabla nueva con alias)
 	create table new_table_name AS select column_name AS alias_name, function(param) AS alias_name from table_name order by column_name;
+
+*fitro de datos con subquery
+	select customers.customerNumber, contactFirstName, payments.amount from customers, payments where amount = (select max(amount) from payments) and customers.custom erNumber = (select max(customerNumber) from customers);
 
 
 ----------------
