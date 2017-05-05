@@ -1,0 +1,18 @@
+When do we use backticks and quotes in SQL?
+
+- Backticks (`) are used to indicate database, table, and column names. Unless you're using reserved or conflicting words for table and database names, you'll not need to use them.
+
+- Quotes (' or ") are used to delimit strings, and differentiate them from column names.
+
+For example 
+
+SELECT * FROM `database`.`table` WHERE `column` = "value";
+
+But, backticks aren't needed, if you use reasonable table and column names:
+
+SELECT * FROM mydb.users WHERE username = "jim";
+
+But strings will always need quotes. 
+This query is comparing the value in the column username against a value in the column bob:
+
+SELECT * FROM mydb.users WHERE username = bob;
