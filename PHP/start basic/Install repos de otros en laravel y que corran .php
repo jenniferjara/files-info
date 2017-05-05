@@ -30,19 +30,27 @@ php artisan
 -----------------------------------
 despues de clonar el repo:
 
-* cp .env.example .env
-* composer install
-* php artisan key:generate
+	copia ejemplo de env
+	* cp .env.example .env
 
-* npm (windows)
+	instalar dependencias en vg
+	* composer install
 
-* php artisan migrate
+	generar llave para migraciones
+	* php artisan key:generate
+
+	instala dependencias en lc
+	* npm (windows)
+
+	realiza la migración
+	* php artisan migrate
 
 si hay db realizar la migracion 
 
-* entrar a mysql: mysql -u root -p
-* create database nombre
-* use nombre
-* exit 
-* modificar .env
-* php artisan migrate
+	* entrar a mysql: mysql -u root -p
+	* create database nombre y salir {exit}
+	* modificar .env
+		- cambiar el local, user y password
+	Realizar la migración
+	* php artisan migrate
+
