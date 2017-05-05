@@ -93,17 +93,45 @@ Table
 
 *añade una columna nueva
 	ALTER TABLE table_name
-    	ADD column_name tipo_dato <== nueva columna
-    	AFTER column_name_ref; <== referencia de ubicacion
+    ADD column_name tipo_dato <== nueva columna
+    AFTER column_name_ref; <== referencia de ubicacion
 
+*cambia nombre de una tabla
+	rename table old_name to new_name
+
+*renombrar el nombre de una tabla
+    ALTER TABLE table_name
+	RENAME TO new_table_name;
+*borrar una table
+	drop table table_name;
+
+*muestra el index de una tabla
+	show index from table_name
+	(antes, selecciona una base de datos)
+
+*borrar un index
+	alter table_name drop index index_name;
+	drop index index_name on table_name;
+
+-----------------------------------
+inserts, deletes, update, adds, etc
+-----------------------------------
 *cambia el nombre de una columna
-    	ALTER TABLE table_name
-    	change column_name <== tabla que cambia de nombre
-    	new_column_name tipo_dato; <== nuevo nombre y tipo de dato
+    ALTER TABLE table_name
+    change column_name <== tabla que cambia de nombre
+    new_column_name tipo_dato; <== nuevo nombre y tipo de dato
+
+*inserta nueva columna
+	alter table table_name
+	add new_column_name tipo_dato [añadir características];
+
+*borrar datos de una tabla
+	truncate table table_name;
+	delete from table;
 
 *borra una columna
-    	ALTER TABLE table_name
-    	DROP column_name; <== borra de la columna
+    ALTER TABLE table_name
+    DROP column_name; <== borra de la columna
 
 *modifica propiedades de una columna
 	ALTER TABLE table_name 
@@ -119,18 +147,14 @@ Table
 	(Insertar varios datos en una columna)
 	insert into table_name(column_name) values ('value1'), ('value2'), ('value3');
 
-*renombrar el nombre de una tabla
-	ALTER TABLE table_name
-	RENAME TO new_table_name;
-
-*borra una fila de una table
+*borra una fila de una tabla
 	delete from table_name where conditions
 
 *contar datos
 	select count(*) from table_name <== cuenta los elem selecionados en una tabla
 	where column_name = dato <== referencia del conteo
 
-*modificar / cambiar
+*modificar / cambiar nombre de una tabla
 	alter table table_name change old_column_name new_column_name tipo_dato
 	
 *crea una tabla y almacena datos en base a una consulta
