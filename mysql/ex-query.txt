@@ -1,0 +1,20 @@
+Suma con subquery
+
++-----------------+---------------+------+-----+---------+-------+
+| Field           | Type          | Null | Key | Default | Extra |
++-----------------+---------------+------+-----+---------+-------+
+| orderNumber     | int(11)       | NO   | PRI | NULL    |       |
+| productCode     | varchar(15)   | NO   | PRI | NULL    |       |
+| quantityOrdered | int(11)       | NO   |     | NULL    |       |
+| priceEach       | decimal(10,2) | NO   |     | NULL    |       |
+| orderLineNumber | smallint(6)   | NO   |     | NULL    |       |
++-----------------+---------------+------+-----+---------+-------+
+
+select productcode,  			<== datos que se muestra en el query 
+  (select sum(priceeach) 		<== subquery de suma
+  from orderdetails 			<== tabla de ref de subquery
+  where productcode = 'S18_2325') 	<== condiciones del subquery
+  as 'sum_all' 				<== Alias del subquery
+from orderdetails 			<== tabla del query
+where productcode = 'S18_2325' 		<== condiciones de query
+group by productcode;			<== agrupamiento para mostrar los datos

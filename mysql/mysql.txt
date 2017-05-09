@@ -74,6 +74,8 @@ mysqldump -u root -p scotiabankDB > backup_name.sql
 -----------
 DataBases
 -----------
+*version: select @@version; / select version();
+
 *Crear una base de datos
 	create database name_DB;
 
