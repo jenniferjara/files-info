@@ -13,3 +13,6 @@ despues de clonar un repo, normalmente debes realizar los siguientes pasos:
 
 (realizar la migración)
 - php artisan migrate
+
+(levantar el proyecto) 
+- php artisan serve --host=0.0.0.0
