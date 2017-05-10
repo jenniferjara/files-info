@@ -1,0 +1,15 @@
+instalar proyectos de terceros
+despues de clonar un repo, normalmente debes realizar los siguientes pasos:
+
+(dependencias)
+- composer install
+- npm install
+
+(copiar el file .env de ejemplo)
+- cp .env.example .env
+
+(generar una llave)
+- php artisan key:generate
+
+(realizar la migración)
+- php artisan migrate
