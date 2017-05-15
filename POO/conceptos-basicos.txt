@@ -1,0 +1,46 @@
+Bases de la Programación Orientada a Objetos
+
+4 conceptos fundamentales
+
+- Abstracción: proceso mental para extraer las característcas esenciales de algo, define el comportamiento general de un objeto.
+
+- Encapsular: 
+	Límita el acceso a los dato de una clase por medios diferentes a los específicados.
+	Garantiza la integridad de los datos de entrada.
+	Aisla los datos de un objeto y los protege para evitar que sean modificados.
+	Se define tres niveles de acceso:
+	- Público: es accesible para cualquier clase exterior y cualquier parte del programa.
+	- Protegido: es accesible para la clase y las clases que la heredan (funciones miembros de esta clase y sus subclases).
+	- Privado: acceso restringido para los metodos de la clase.
+
+- Modularidad:
+	Subdividir en módulos (partes pequeñas de código), que sean los más independiente posible de la aplicación y tengan sentido. 
+	Permite añadir o extraer componentes sin afectar el funcionamiento de la aplicación en general. 
+	Ellos se pueden compilar por separado pero aún teniendo conexión con otros módulos de las aplicación.
+
+- Jerarquización:
+	Orden de los elementos, segun responsabilidad, grados, incumbencia con otros.
+	Tipo de jerarquía
+	- Relación de clases: Herencia.
+	- Relaciónde objetos: 
+
+Clases en POO
+- Son abstraciones de objetos, ya que solo lo esencial y general para crear un objeto a partir de una clase
+	Propiedades: características de los objetos (clase), son como variables que almacenan datos relacionados al objeto.
+	Métodos: funcionalidades, acciones de los objetos.
+
+Objetos en POO
+- son ejemplares de una clase.
+- crear objetos a partir de una clase se llama instanciar
+	Estados: valor que toma una propiedad del objeto.
+	Mensajes: es la accion tras la llamada de un método de un objeto. permite la interacción entre ellos
+
+Métodos de Clase
+
+Miembro 'Static'
+- Son aquellos que tienen un valor asignado dentro de una clase, no necesitan una instancia para acceder a ellos (es decir crear un objeto nuevo).
+- Son elementos que existen dentro de la propia clase y para acceder los cuales no necesitamos haber creado ningún objeto de esa clase. 
+	Atributos estáticos: suelen referenciarse usando el nombre de la clase, por ejemplo: Clase.atributo (donde “Clase” es el nombre de la clase y “atributo” es el nombre del atributo).
+	Métodos estáticos: la invocación suele hacerse llamando a Clase.metodo() para ejecutarlos.
+
+Herencia
