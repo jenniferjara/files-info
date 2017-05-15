@@ -20,9 +20,7 @@ Bases de la Programación Orientada a Objetos
 
 - Jerarquización:
 	Orden de los elementos, segun responsabilidad, grados, incumbencia con otros.
-	Tipo de jerarquía
-	- Relación de clases: Herencia.
-	- Relaciónde objetos: 
+	En POO se usa una jerarquización basada en composión 
 
 Clases en POO
 - Son abstraciones de objetos, ya que solo lo esencial y general para crear un objeto a partir de una clase
@@ -44,3 +42,6 @@ Miembro 'Static'
 	Métodos estáticos: la invocación suele hacerse llamando a Clase.metodo() para ejecutarlos.
 
 Herencia
+- Benenficios de la herencia en POO: la jerarquía y DRY (reutilización de código, es cierto que con los métodos ya se tiene cierto nivel de DRY pero no se aprovecha al mámo)
+- Hay dos tipos de clases: clase padre y las clases hijos; el padre transfiere su código a sus hijos.
+- Con herencias estamos reusando código porque se extiende y es como si el código ya estuviera ahí.
