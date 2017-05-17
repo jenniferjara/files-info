@@ -1,10 +1,10 @@
 Bases de la Programación Orientada a Objetos
 
-4 conceptos fundamentales
+4 CONCEPTOS FUNDAMENTALES
 
-- Abstracción: proceso mental para extraer las característcas esenciales de algo, define el comportamiento general de un objeto.
+1. Abstracción: proceso mental para extraer las característcas esenciales de algo, define el comportamiento general de un objeto.
 
-- Encapsular: 
+2. Encapsular: 
 	Límita el acceso a los dato de una clase por medios diferentes a los específicados.
 	Garantiza la integridad de los datos de entrada.
 	Aisla los datos de un objeto y los protege para evitar que sean modificados.
@@ -13,35 +13,44 @@ Bases de la Programación Orientada a Objetos
 	- Protegido: es accesible para la clase y las clases que la heredan (funciones miembros de esta clase y sus subclases).
 	- Privado: acceso restringido para los metodos de la clase.
 
-- Modularidad:
+3. Modularidad:
 	Subdividir en módulos (partes pequeñas de código), que sean los más independiente posible de la aplicación y tengan sentido. 
 	Permite añadir o extraer componentes sin afectar el funcionamiento de la aplicación en general. 
 	Ellos se pueden compilar por separado pero aún teniendo conexión con otros módulos de las aplicación.
 
-- Jerarquización:
+4. Jerarquización:
 	Orden de los elementos, segun responsabilidad, grados, incumbencia con otros.
-	En POO se usa una jerarquización basada en composión 
+	En POO se usa una jerarquización basada en composión, parecida un árbol (raíz y ramas).
 
-Clases en POO
+CLASES en POO
 - Son abstraciones de objetos, ya que solo lo esencial y general para crear un objeto a partir de una clase
 	Propiedades: características de los objetos (clase), son como variables que almacenan datos relacionados al objeto.
 	Métodos: funcionalidades, acciones de los objetos.
 
-Objetos en POO
+OBJETOS en POO
 - son ejemplares de una clase.
 - crear objetos a partir de una clase se llama instanciar
 	Estados: valor que toma una propiedad del objeto.
 	Mensajes: es la accion tras la llamada de un método de un objeto. permite la interacción entre ellos
 
-Métodos de Clase
-
-Miembro 'Static'
+MIEMBRO 'Static'
 - Son aquellos que tienen un valor asignado dentro de una clase, no necesitan una instancia para acceder a ellos (es decir crear un objeto nuevo).
 - Son elementos que existen dentro de la propia clase y para acceder los cuales no necesitamos haber creado ningún objeto de esa clase. 
 	Atributos estáticos: suelen referenciarse usando el nombre de la clase, por ejemplo: Clase.atributo (donde “Clase” es el nombre de la clase y “atributo” es el nombre del atributo).
 	Métodos estáticos: la invocación suele hacerse llamando a Clase.metodo() para ejecutarlos.
 
-Herencia
+HERENCIA
 - Benenficios de la herencia en POO: la jerarquía y DRY (reutilización de código, es cierto que con los métodos ya se tiene cierto nivel de DRY pero no se aprovecha al mámo)
-- Hay dos tipos de clases: clase padre y las clases hijos; el padre transfiere su código a sus hijos.
+- Hay dos tipos de clases: clase padre y las clases hijos (heredada o derivada); el padre transfiere su código a sus hijos.
 - Con herencias estamos reusando código porque se extiende y es como si el código ya estuviera ahí.
+- veamos a las herencias como una especie de especialización de la clase padre.
+
+POLIFORMISMO
+- varia segun el tipado del lenguaje,
+	tipado estático: recibe tipo de datos segun el metodo, podemos acceder a estos por jerarquía de clases, ya que permite el acceso y esa 'relajacion' en el tipo de dato. en este tipo de lenguaje es donde se aprecia más el poliformismo. 
+	tipado dinámico: como el tipado es debil recibe cualquier tipo de dato , el poliformismo no tiene tanta relevancia. cuando usas poliformismo y herencia con este tipo de datos de llama de tipado genérico.
+- evita la creacion de métodos para cada clase derivada, haciendo más DRY el código y tambien porque aceptará otras clases derivadas posteriores a la clase padre.
+
+ABSTRACCION EN POO
+- Una clase abstracta es aquella en la que hay definidos métodos abstractos, sobre la cual no se puede instanciar objetos.
+- En una clase abstracta al menos debe existir un método abstracto, solo recibe un nombre y los parametros y no código.

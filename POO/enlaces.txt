@@ -2,4 +2,5 @@
 - Las clases abstractas solamente se pueden usar como clases base para otras clases. 
 - 4 conceptos https://www.youtube.com/watch?time_continue=5&v=AAKoccH230Y
 - beneficios de POO: https://desarrolloweb.com/articulos/beneficios-poo-resumen.html
+- poliformismo: http://codingornot.com/04-poo-polimorfismo
 
