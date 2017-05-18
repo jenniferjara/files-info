@@ -3,4 +3,9 @@
 - 4 conceptos https://www.youtube.com/watch?time_continue=5&v=AAKoccH230Y
 - beneficios de POO: https://desarrolloweb.com/articulos/beneficios-poo-resumen.html
 - poliformismo: http://codingornot.com/04-poo-polimorfismo
+- abstract vs interface: 
+	http://webrewrite.com/abstract-class-vs-interfaces-php/
+	https://www.quora.com/What-is-different-between-abstract-class-and-interface-in-PHP 
+	http://www.techflirt.com/tutorials/oop-in-php/abstract-classes-interface.html
+- Símbolos en PHP: http://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php 
 

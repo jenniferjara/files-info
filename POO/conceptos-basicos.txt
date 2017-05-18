@@ -51,6 +51,15 @@ POLIFORMISMO
 	tipado dinámico: como el tipado es debil recibe cualquier tipo de dato , el poliformismo no tiene tanta relevancia. cuando usas poliformismo y herencia con este tipo de datos de llama de tipado genérico.
 - evita la creacion de métodos para cada clase derivada, haciendo más DRY el código y tambien porque aceptará otras clases derivadas posteriores a la clase padre.
 
-ABSTRACCION EN POO
+CLASES ABSTRACTAS
 - Una clase abstracta es aquella en la que hay definidos métodos abstractos, sobre la cual no se puede instanciar objetos.
-- En una clase abstracta al menos debe existir un método abstracto, solo recibe un nombre y los parametros y no código.
+- En una clase abstracta al menos debe existir un método abstracto que solo recibe un nombre y los parametros, más no código. 
+- Es un modelo para las clases que la heredan y solo se pueden implementar una clase abstracta. 
+- Puede ser definido de cualquier vizibilidad (public, private, protected).
+
+INTERFACES
+- Son muy similares a las clases abstractas, posees un número de métodos generales para crear objetos con características más específicas. 
+- Es como un contrato, ya que define lo que la clase va a implementar o hacer, sin decirle cómo lo hará ya que cada clase es independiente de como realiza las acciones.
+- Una clase puede implementar varios interfaces al mismo tiempo.
+- Todos los métodos deben tener vizibilidad publica.
+
