@@ -8,4 +8,5 @@
 	https://www.quora.com/What-is-different-between-abstract-class-and-interface-in-PHP 
 	http://www.techflirt.com/tutorials/oop-in-php/abstract-classes-interface.html
 - Símbolos en PHP: http://stackoverflow.com/questions/3737139/reference-what-does-this-symbol-mean-in-php 
+- Tuto: http://phpenthusiast.com/object-oriented-php-tutorials 
 
