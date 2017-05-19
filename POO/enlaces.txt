@@ -23,3 +23,4 @@ PATRONES DE DISEÑO
 - http://www.arquitecturajava.com/usando-el-patron-factory/
 - https://www.fdi.ucm.es/profesor/jpavon/poo/2.14PDOO.pdf 
 
+- Universidad Complutense de Madrid: https://www.fdi.ucm.es/profesor/jpavon/
