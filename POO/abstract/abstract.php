@@ -14,3 +14,8 @@ abstract class Car{
 	abstract public function calPrice();
 	abstract public function getColor($color);
 }
+
+interface Cars {
+	public function setModel($name);
+	public function getModel();
+}
