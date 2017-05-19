@@ -9,10 +9,10 @@ pi();
 
 function calcNumMilesOnFullTank(array $models) {
   foreach($models as $item){
-    echo $carModel = $item[0];
-    echo " : ";
-    echo $numberOfMiles = $item[1] * $item[2];
-    echo "\n";
+    // echo $carModel = $item[0];
+    // echo " : ";
+    // echo $numberOfMiles = $item[1] * $item[2];
+    // echo "\n";
    }
 }
 
@@ -20,5 +20,24 @@ $models = array (
 	array("Toyota", 12, 3),
 	array("BMW", 3, 49)
 );
+$dara = "text";
 
-echo calcNumMilesOnFullTank($models);
+// calcNumMilesOnFullTank($models);
+
+/********************************/
+class Song {
+	public $title;
+	public $description;
+}
+
+$song1 = new Song();
+$song1-> title = "Beat it!";
+$song1-> description = "It doesn't matter who's wrong or right... just beat it!";
+
+function Sing($song1){
+	return "Singing the song called " . $song1-> title . "\n" . $song1-> description;
+}
+
+echo Sing($song1);
+
+/**********************************/

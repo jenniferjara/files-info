@@ -37,7 +37,7 @@ class Car{
 		}
 	}
 	public function getModel(){
-		return "En ". __CLASS__ . " este modelo es ". $this-> model;
+		return "En ". get_class($this) . " este modelo es ". $this-> model;
 	}
 
 }
@@ -66,7 +66,7 @@ $audi -> color = 'verde';
 // $audi -> setModel("Mercedez");
 // echo $audi-> getModel();
 // echo $saludar;
-echo "\n";
+// echo "\n";
 
 /**********************************/
 
@@ -78,11 +78,11 @@ class User {
     return "hello ". $this-> firstName ." ". $this-> lastName;
   }
   public function register(){
-  	echo $this -> firstName .": usuario registrado";
+  	// echo $this -> firstName .": usuario registrado";
   	return $this;
   }
   public function mail(){
-  	echo $this-> firstName . ", tu mail ya esta registrado";
+  	// echo $this-> firstName . ", tu mail ya esta registrado";
   	return $this;
   }
 }
@@ -100,6 +100,6 @@ $hello2 = $user2 -> hello();
 // imprimir los resultados en la consola
 // echo $hello;
 $user1 -> register() -> mail();
-echo "\n";
-echo $hello2;
+// echo "\n";
+// echo $hello2;
 

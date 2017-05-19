@@ -15,3 +15,10 @@
 - Abstract classes: http://www.php5-tutorial.com/classes/abstract-classes/ 
 - echo vs print: http://www.diffen.com/difference/echo-vs-print-in-PHP
 
+PATRONES DE DISEÑO
+- http://www.phptherightway.com/pages/Design-Patterns.html
+- https://sourcemaking.com/design_patterns 
+- http://designpatternsphp.readthedocs.io/en/latest/
+- https://www.ibm.com/developerworks/library/os-php-designptrns/
+- http://www.arquitecturajava.com/usando-el-patron-factory/
+
