@@ -21,4 +21,5 @@ PATRONES DE DISEÑO
 - http://designpatternsphp.readthedocs.io/en/latest/
 - https://www.ibm.com/developerworks/library/os-php-designptrns/
 - http://www.arquitecturajava.com/usando-el-patron-factory/
+- https://www.fdi.ucm.es/profesor/jpavon/poo/2.14PDOO.pdf 
 
