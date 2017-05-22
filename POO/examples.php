@@ -39,5 +39,24 @@ function Sing($song1){
 }
 
 echo Sing($song1);
+echo "\n";
 
 /**********************************/
+
+// String length without strlen()
+
+$s = 'str';
+$i=0;
+while ($s[$i] != '') {
+	  $i++;
+}
+echo $i;
+
+if ($i <= 4){
+	echo "hola";
+} else {
+	echo "bye";
+}
+
+/**********************************/
+

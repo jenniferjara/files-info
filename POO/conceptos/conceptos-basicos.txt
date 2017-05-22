@@ -1,13 +1,11 @@
-Bases de la Programación Orientada a Objetos
+Teoría de la Programación Orientada a Objetos
 
 4 CONCEPTOS FUNDAMENTALES
 
 1. Abstracción: proceso mental para extraer las característcas esenciales de algo, define el comportamiento general de un objeto.
 
 2. Encapsular: 
-	Límita el acceso a los dato de una clase por medios diferentes a los específicados.
-	Garantiza la integridad de los datos de entrada.
-	Aisla los datos de un objeto y los protege para evitar que sean modificados.
+	Protege las propiedades y métodos de un objeto, evita que sean modificados.
 	Se define tres niveles de acceso:
 	- Público: es accesible para cualquier clase exterior y cualquier parte del programa.
 	- Protegido: es accesible para la clase y las clases que la heredan (funciones miembros de esta clase y sus subclases).
@@ -31,7 +29,8 @@ OBJETOS en POO
 - son ejemplares de una clase.
 - crear objetos a partir de una clase se llama instanciar
 	Estados: valor que toma una propiedad del objeto.
-	Mensajes: es la accion tras la llamada de un método de un objeto. permite la interacción entre ellos
+	Mensajes: es como los métodos ejecutan acciones y así los objetos interactuan entre ellos. 
+	Usualmenete, tiene tres partes: objeto destinatario, mensaje, parametro
 
 MIEMBRO 'Static'
 - Son aquellos que tienen un valor asignado dentro de una clase, no necesitan una instancia para acceder a ellos (es decir crear un objeto nuevo).
@@ -40,9 +39,9 @@ MIEMBRO 'Static'
 	Métodos estáticos: la invocación suele hacerse llamando a Clase.metodo() para ejecutarlos.
 
 HERENCIA
+- Permite definir nuevas clases a partir de una clase base (superclase, padre). 
+- Las clases que derivan (subclases, heredadas, derivadas o hijos) heredan todo el comportamiento de la clases base, ademas de poder implementar variables y métodos propios.
 - Benenficios de la herencia en POO: la jerarquía y DRY (reutilización de código, es cierto que con los métodos ya se tiene cierto nivel de DRY pero no se aprovecha al mámo)
-- Hay dos tipos de clases: clase padre y las clases hijos (heredada o derivada); el padre transfiere su código a sus hijos.
-- Con herencias estamos reusando código porque se extiende y es como si el código ya estuviera ahí.
 - veamos a las herencias como una especie de especialización de la clase padre.
 
 POLIFORMISMO
@@ -52,9 +51,10 @@ POLIFORMISMO
 - evita la creacion de métodos para cada clase derivada, haciendo más DRY el código y tambien porque aceptará otras clases derivadas posteriores a la clase padre.
 
 CLASES ABSTRACTAS
-- Una clase abstracta es aquella en la que hay definidos métodos abstractos, sobre la cual no se puede instanciar objetos.
-- En una clase abstracta al menos debe existir un método abstracto que solo recibe un nombre y los parametros, más no código. 
-- Es un modelo para las clases que la heredan y solo se pueden implementar una clase abstracta. 
+- Sirve de modelo base para la creación de clases derivadas.
+- Definen e implementan parcialmente comportamientos, pero la mayor parte de ellos no se definen ni implementan totalmente.
+- No se puede instanciar un objeto de estas clases, lo que se hace es extenderla a otra y a partir de ella poder crear nuevos objetos.
+- Si un método es declarado como abstracto, implica que la clase será declarada como abstracta, pero una clase se abstracta no implica que sus métodos lo sean, solo implica que no se pueda instanciar objetos.
 - Puede ser definido de cualquier vizibilidad (public, private, protected).
 
 INTERFACES

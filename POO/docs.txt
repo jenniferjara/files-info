@@ -1,0 +1,9 @@
+Teoria de POO.
+https://www.desarrolloweb.com/manuales/teoria-programacion-orientada-objetos.html
+
+ENCAPSULAMIENTO
+https://algonzalezpoo.wordpress.com/encapsulamiento/
+
+************
+PD
+P Arquitectural 

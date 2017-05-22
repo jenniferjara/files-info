@@ -14,6 +14,8 @@
 
 - Abstract classes: http://www.php5-tutorial.com/classes/abstract-classes/ 
 - echo vs print: http://www.diffen.com/difference/echo-vs-print-in-PHP
+- teoria de POO: http://luis.izqui.org/resources/ProgOrientadaObjetos.pdf
+
 
 PATRONES DE DISEÑO
 - http://www.phptherightway.com/pages/Design-Patterns.html
@@ -26,4 +28,11 @@ PATRONES DE DISEÑO
 
 - Universidad Complutense de Madrid: https://www.fdi.ucm.es/profesor/jpavon/
 - Gang of Four: https://en.wikipedia.org/wiki/Design_Patterns
+
+
+Univ de la Rioja
+- http://www.unirioja.es/cu/jearansa/0910/archivos/EIPR_Tema01.pdf
+
+- http://www.unirioja.es/cu/jearansa/0910/archivos/EIPR_Tema04.pdf
+
 

@@ -1,0 +1,51 @@
+CLASES en POO
+- Son abstraciones de objetos, ya que solo lo esencial y general para crear un objeto a partir de una clase 
+	- Propiedades: características de los objetos (clase), son como variables que almacenan datos relacionados al objeto.
+	- Métodos: funcionalidades, acciones de los objetos.
+- Describe los atributos de los objetos que comparten esa clase y así como los métodos de la clase implementan el comportamiento de los objetos.
+
+OBJETOS en POO
+- son ejemplares de una clase.
+- crear objetos a partir de una clase se llama instanciar
+	Estados: valor que toma una propiedad del objeto.
+	Mensajes: es como los métodos ejecutan acciones y así los objetos interactuan entre ellos. Usualmenete, tiene tres partes: objeto destinatario, mensaje, parametro.
+
+CONSTRUCTORES DE CLASES
+- Los constructores de una clase deben asignar un valor inicial a todos y cada uno de los atributos de dicha clase. 
+- Es recomendable al menos crear un constructor a las clases, ya que nos da control de como se construyen los objetos. 
+
+Ejemplo en Php:
+class Database {
+  protected $userName;
+  protected $password;
+  protected $dbName;
+
+  // método constructor que asigna valor inicial a los atributos
+  
+  public function __construct ( $UserName, $Password, $DbName ) {
+	$this->userName = $UserName;
+	$this->password = $Password;
+	$this->dbName = $DbName;
+	}
+   }
+
+// and you would use this as:
+$db = new Database ( 'user_name', 'password', 'database_name' );
+
+Métodos de Acceso y Modificacion de una clase
+- Casi siempre se define un método de acceso a sus atributos (getters) estos no tienen ningun parametro simplemente devuelven un valor.
+- Cuando se quiera modificar algún atributo, para ello se define métodos que nos facilitan este proceso (setters), solo lleva un parametro que es el nuevo valor que llevará el atributo que se desea cmabiar.
+
+Ejemplo en Php
+- Setters: protected function setTitle();
+- Getters: protected function getTitle();
+
+ATRIBUTOS Y MÉTODOS ESTÁTICOS
+- Son aquellos que tienen un único valor para todos los objetos de una clase determinada.
+- Conocidos tambien como atributos de clase o constantes, ejemple el valor de PI o contadores que queramos usar al implementar otros objetos.
+- Tambien hay métodos estáticos, ellos no pueden acceder a un atributo no estático. 
+
+MODIFICADORES DE ACCESO
+- Normalmente son de acceso público y privado, esta divisipon queda en decision del programador y suele seguir estas indicaciones: privados, los atributos de clase o estáticos y métodos auxiliares; y públicos los que será usados afuera por los objetos instanciados.
+- La parte pública es como un envoltorio para la parte privada, para los clientes solo la parte pública es relevante. El programador es responsable de la parte privada y pública tengan coherencia y asegurarse del comportamiento de la clase.
+- 

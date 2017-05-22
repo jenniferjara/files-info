@@ -1,0 +1,14 @@
+4 CONCEPTOS FUNDAMENTALES                                                            
+                                                                                     
+1. Abstracción: proceso mental para extraer las característcas esenciales de algo, define el comportamiento general de un objeto.                                   	                                                                                      
+2. Encapsular:                                                                       
+Protege las propiedades y métodos de un objeto, evita que sean modificados.  
+En Php se define tres niveles de acceso:                                            
+- Público: es accesible para cualquier clase exterior y cualquier parte del programa.
+- Protegido: es accesible para la clase y las clases que la heredan (funciones miembros de esta clase y sus subclases).                                           
+- Privado: acceso restringido para los metodos de la clase. 
+
+3. Modularidad: Subdividir en módulos (partes pequeñas de código), que sean los más indepediente posible de la aplicación y tengan sentido. Permite añadir o extraer componentes sin afectar el funcionamiento de la aplicación en general. Ellos se pueden compilar por separado pero aún teniendo conexión con otros módulos de las aplicación. 
+
+4. Jerarquización:                                                                   
+Orden de los elementos, segun responsabilidad, grados, incumbencia con otros. En POO se usa una jerarquización basada en composión, parecida un árbol (raíz y ramas).                                                             
