@@ -29,10 +29,5 @@ PATRONES DE DISEÑO
 - Universidad Complutense de Madrid: https://www.fdi.ucm.es/profesor/jpavon/
 - Gang of Four: https://en.wikipedia.org/wiki/Design_Patterns
 
-
-Univ de la Rioja
-- http://www.unirioja.es/cu/jearansa/0910/archivos/EIPR_Tema01.pdf
-
-- http://www.unirioja.es/cu/jearansa/0910/archivos/EIPR_Tema04.pdf
-
+UML: http://www.oxfordmathcenter.com/drupal7/node/35
 
