@@ -1,0 +1,11 @@
+Asociación: cuando una de ellas requiere los servicios de otras, es decir acceder a sus propiedades o métodos. estas son más débiles que las de agregacion porque no requieren crear un objeto nuevo, sino que los objetos interactuan entre si.
+
+Agregación: cuando una serie de clase aparecen como una serie de atributos de otra. tambien conocidas como todo-parte. para identificar este tipo de relacion es definir si la clase "tiene uno" (has a).
+Existe un tipo particular de agregacion llamada composicion, es decir es los objetos agregados no tienen sentido sin el objeto resultante.
+
+Herencia: propia de los lemguajes de la POO. una subclase hereda los atributos de la clase base, ademas de poder añadir más atributos o métodos. responden al predicado es un (is a).
+
+Esto es lo que hace diferencia de la agregacion, que responden a un predicado tiene un.
+Siempre que necesites identificar una clase realiza esta comprobacion para identificar que tipo de relacion definir.
+
+

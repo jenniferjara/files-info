@@ -48,4 +48,5 @@ ATRIBUTOS Y MÉTODOS ESTÁTICOS
 MODIFICADORES DE ACCESO
 - Normalmente son de acceso público y privado, esta divisipon queda en decision del programador y suele seguir estas indicaciones: privados, los atributos de clase o estáticos y métodos auxiliares; y públicos los que será usados afuera por los objetos instanciados.
 - La parte pública es como un envoltorio para la parte privada, para los clientes solo la parte pública es relevante. El programador es responsable de la parte privada y pública tengan coherencia y asegurarse del comportamiento de la clase.
-- 
+- Normalmente los atributos son declarados como privados y hacer que sean los métodos los que accedan a esta información y hasta poder modificarlas.
+

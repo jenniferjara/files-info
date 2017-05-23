@@ -22,4 +22,4 @@ class Movie {
 }
 
 $movie1 = new Movie("Un día de carreras", "Sam Wood", 111);
-echo $movie1-> title;
+// echo $movie1-> title;

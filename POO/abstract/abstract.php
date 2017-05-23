@@ -3,6 +3,11 @@ abstract class Car{
 	protected $tankVolume;
 	protected $priceModel;
 
+	function __construct ($tankVolume, $priceModel){
+		$this-> tankVolume = $tankVolume;
+		$this-> priceModel = $priceModel;
+	}
+
 	public function setTankVolume ($volume){
 		$this -> tankVolume = $volume;
 	}

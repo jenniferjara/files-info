@@ -9,7 +9,7 @@ class Square implements Shapes {
 	// 	$this-> width = $width;
 	// 	$this-> height = $height;
 	// }
-	public function getModel($width, $height){
+	function __construct($width, $height){
 		$this-> width = $width;
 		$this-> height = $height;
 	}
