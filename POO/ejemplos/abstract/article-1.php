@@ -23,7 +23,7 @@ class tipo3 extends Article implements Actions {
 }
 
 $tp3 = new tipo3();
-$tp3-> setName("superpoderes");
+$tp3-> setName("super");
 
 echo $tp3-> getName();
 echo "\n";
