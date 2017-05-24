@@ -30,4 +30,5 @@ PATRONES DE DISEÑO
 - Gang of Four: https://en.wikipedia.org/wiki/Design_Patterns
 
 UML: http://www.oxfordmathcenter.com/drupal7/node/35
+Ptt: http://www.itnuevolaredo.edu.mx/takeyas/apuntes/poo/Apuntes/04.-%20Clases%20Abstractas%20e%20Interfaces.pdf 
 
