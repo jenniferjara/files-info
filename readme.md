@@ -1,6 +1,6 @@
 Some helpers for some tools :D 
 ---
 
-This is just a list of commands.
+This is just a list of commands or concept about Object-oriented programming.
 
-if you wanna help me, please clone this repo and send me your pull request. :D
+:D
