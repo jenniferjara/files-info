@@ -1,0 +1,141 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Location;
+use Illuminate\Http\Request;
+
+use App\Http\Requests;
+use App\Http\Requests\SaveCustomerRequest;
+use Validator;
+use App\Customer;
+use App\Pet;
+
+class JoinController extends Controller
+{
+
+    /**
+         * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+	      */
+	          public function index()
+		      {
+
+		              $departments = \App\Location::getDepartaments();
+			              $provinces = \App\Location::getProvinces($departments[0]->cod_dep);
+				              $districts = \App\Location::getDistricts($provinces[0]->cod_prov);
+
+					              $data = [
+						                  'seo_description' => '¡Pasa la voz! ¡Tenemos que seguir sumando miembros al Club para ayudar a más perros abandonados!',
+								              'departaments' => $departments,
+									                  'provinces' => $provinces,
+											              'districts' => $districts
+												              ];
+
+													              return view('join.index', $data);
+														          }
+
+															      public function getLocations($type, $input)
+															          {
+
+																          if ($type == 'p') {
+																	              return response()->json(\App\Location::getProvinces($input));
+																		              } else if ($type == 'd') {
+																			                  return response()->json(\App\Location::getDistricts($input));
+																					          }
+
+																						          return 'error';
+																							      }
+
+
+																							          /**
+																								       * @param SaveCustomerRequest $request
+																								            * @return $this|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+																									         */
+																										     public function post(SaveCustomerRequest $request)
+																										         {
+
+																											         \DB::beginTransaction();
+
+																												         try {
+
+																													             $data = $request->except('_token');
+
+																														                 // $timeContactsOptions = [
+																																             //     1 => "En la mañana",
+																																	                 //     2 => "A la hora de almuerzo (12pm - 2pm)",
+																																			             //     3 => "En la tarde",
+																																				                 //     4 => "Después de las 6pm"
+																																						             // ];
+
+																																							                 $location = \App\Location::getConcatLocation($data['district']);
+
+																																									             $customer = new Customer();
+																																										                 $customer->name = $data['name'];
+																																												             $customer->last_name = $data['last_name'];
+																																													                 $customer->dni = $data['dni'];
+																																															             $customer->mobile_phone = $data['mobile_phone'];
+																																																                 $customer->email = $data['email'];
+																																																		             $customer->location = $location[0]->location;
+																																																			                 //$customer->time_contact = $timeContactsOptions[$data["time_contact"]];
+																																																					             //$customer->cod_vet = $data['cod_vet'];
+																																																						                 $customer->save();
+
+																																																								             $rules = [
+																																																									                     'name' => 'required',
+																																																											                     'years' => 'required|integer',
+																																																													                     'months' => 'required|integer',
+																																																															                     'type' => 'required|in:dog,cat'
+																																																																	                 ];
+
+																																																																			             if (is_array($data['pet'])) {
+																																																																				                     foreach ($data['pet'] as $pet) {
+																																																																						                         $validator = Validator::make($pet, $rules);
+																																																																									                     if ($validator->passes()) {
+																																																																											                             $petDB = new Pet();
+																																																																														                             $petDB->customer_id = $customer->id;
+																																																																																	                             $petDB->name = $pet['name'];
+																																																																																				                             $petDB->years = $pet['years'];
+																																																																																							                             $petDB->months = $pet['months'];
+																																																																																										                             $petDB->type = $pet['type'];
+																																																																																													                             $petDB->save();
+																																																																																																                         }
+																																																																																																			                 }
+																																																																																																					             } else {
+																																																																																																						                     throw new \Exception('pet should be an array.');
+																																																																																																								                 }
+
+																																																																																																										             //$this->sendEmail($customer);
+
+																																																																																																											                 \DB::commit();
+																																																																																																													             return 'success';
+																																																																																																														             } catch (\Exception $e) {
+																																																																																																															                 \DB::rollBack();
+																																																																																																																	             return $e->getMessage();
+																																																																																																																		                 return 'error';
+																																																																																																																				         }
+
+																																																																																																																					     }
+
+
+																																																																																																																					         /**
+																																																																																																																						      * @param $customer
+																																																																																																																						           */
+																																																																																																																							       private function sendEmail($customer) {
+
+																																																																																																																							               \Mail::later(5, 'emails.register', ['customer' => $customer], function ($m) use ($customer) {
+																																																																																																																								                   $m->getHeaders()->addTextHeader('X-MC-Subaccount', 'wuf');
+																																																																																																																										               $m->to([$customer->email])->subject('Registro Club Wuf');
+																																																																																																																											                   $m->from('info@wuf.pe', 'Club Wuf');
+																																																																																																																													           });
+
+																																																																																																																														           \Mail::later(10, 'emails.register', ['customer' => $customer], function ($m) use ($customer) {
+																																																																																																																															               $m->getHeaders()->addTextHeader('X-MC-Subaccount', 'wuf');
+																																																																																																																																                   $m->to(['falcona@pe.geainternacional.com'])->subject('Registro Club Wuf');
+																																																																																																																																		               //$m->to(['rc@mambo.pe'])->subject('Registro Club Wuf');
+																																																																																																																																			                   $m->from('info@wuf.pe', 'Club Wuf');
+																																																																																																																																					           });
+
+																																																																																																																																						       }
+
+																																																																																																																																						       }
+
